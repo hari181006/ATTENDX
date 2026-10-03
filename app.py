@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 BASE = os.path.dirname(os.path.abspath(__file__))
-app = Flask(__name__, static_folder=os.path.join(BASE, '..', 'frontend'), static_url_path='')
+app = Flask(__name__, static_folder=os.path.join(BASE, 'frontend'), static_url_path='')
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret')
 db_url = os.getenv('DATABASE_URL')
 if not db_url and os.getenv('DB_HOST'):
